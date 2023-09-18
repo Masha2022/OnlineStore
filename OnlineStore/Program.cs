@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using OnlineStore.Data;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using OnlineStore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Добавление Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders().AddDefaultUI().AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Регистрация кастомного сервиса для отправки электронных писем
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
