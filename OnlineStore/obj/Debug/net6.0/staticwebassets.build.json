@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IssR3l3W2R1ZHBSGsmtG1j3yl9uOljlRMTLYxyTrO+E=",
+  "Hash": "UKV7Yf7xWlIFlVtMJdH3W037M0b1GBjfRTj+/qXNORk=",
   "Source": "OnlineStore",
   "BasePath": "_content/OnlineStore",
   "Mode": "Default",
@@ -37026,6 +37026,23 @@
       "OriginalItemSpec": "wwwroot\\FontAwesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Identity": "E:\\новая папка\\OnlineStore\\OnlineStore\\wwwroot\\images\\patio.jpg",
+      "SourceId": "OnlineStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\новая папка\\OnlineStore\\OnlineStore\\wwwroot\\",
+      "BasePath": "_content/OnlineStore",
+      "RelativePath": "images/patio.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\patio.jpg"
+    },
+    {
       "Identity": "E:\\новая папка\\OnlineStore\\OnlineStore\\wwwroot\\images\\product\\0e282279-5d72-4967-acda-29fb103c308f.PNG",
       "SourceId": "OnlineStore",
       "SourceType": "Discovered",
@@ -38299,6 +38316,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "E:\\новая папка\\OnlineStore\\OnlineStore\\wwwroot\\templates\\Inquiry.html",
+      "SourceId": "OnlineStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\новая папка\\OnlineStore\\OnlineStore\\wwwroot\\",
+      "BasePath": "_content/OnlineStore",
+      "RelativePath": "templates/Inquiry.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\Inquiry.html"
     }
   ]
 }

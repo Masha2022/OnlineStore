@@ -1,26 +1,36 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data;
 using OnlineStore.Models;
 
 namespace OnlineStore.Controllers;
 
+// Контроллер для работы с типами приложений.
+[Authorize(Roles = WC.AdminRole)] // Доступ разрешен только для роли администратора.
 public class ApplicationTypeController : Controller
 {
     private readonly ApplicationDbContext _db;
-    
+
+    // Конструктор: инжекция зависимости для контекста базы данных.
     public ApplicationTypeController(ApplicationDbContext db)
     {
         _db = db;
     }
+
+    // Метод для отображения списка типов приложений.
     public IActionResult Index()
     {
         IEnumerable<ApplicationType> objectList = _db.ApplicationTypes;
         return View(objectList);
     }
+
+    // Метод для отображения страницы создания нового типа приложения.
     public IActionResult Create()
     {
         return View();
     }
+
+    // Метод для обработки POST-запроса на создание нового типа приложения.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(ApplicationType type)
@@ -29,18 +39,16 @@ public class ApplicationTypeController : Controller
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
-    
-    //get-edit
+
+    // Метод для отображения страницы редактирования существующего типа приложения.
     public IActionResult Edit(int? id)
     {
         if (id == null || id == 0)
         {
             return NotFound();
         }
-
         //Find работает только с полем, имеющим атрибут первичный ключ!
         var model = _db.ApplicationTypes.Find(id);
-
         if (model == null)
         {
             return NotFound();
@@ -49,7 +57,7 @@ public class ApplicationTypeController : Controller
         return View(model);
     }
 
-    //post - edit
+    // Метод для обработки POST-запроса на редактирование типа приложения.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Edit(ApplicationType type)
@@ -64,7 +72,7 @@ public class ApplicationTypeController : Controller
         return View(type);
     }
 
-    //get-delete
+    // Метод для отображения страницы удаления типа приложения.
     public IActionResult Delete(int? id)
     {
         if (id == null || id == 0)
@@ -81,7 +89,7 @@ public class ApplicationTypeController : Controller
         return View(type);
     }
 
-    //post - delete
+    // Метод для обработки POST-запроса на удаление типа приложения.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult DeletePost(int? id)
